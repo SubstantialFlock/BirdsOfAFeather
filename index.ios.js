@@ -7,10 +7,13 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Dimensions,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
+import Camera from 'react-native-camera';
 
 class bof extends Component {
   render() {
@@ -26,9 +29,26 @@ class bof extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+
+        <Camera
+          ref={(cam) => {
+            this.camera = cam;
+          }}
+          style={styles.preview}
+          aspect={Camera.constants.Aspect.fill}>
+          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+        </Camera>
+
       </View>
     );
   }
+
+  takePicture() {
+    this.camera.capture()
+      .then((data) => console.log(data))
+      .catch(err => console.error(err));
+  }
+
 }
 
 const styles = StyleSheet.create({
@@ -48,6 +68,23 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+
+  preview: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width
+  },
+  capture: {
+    flex: 0,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    color: '#000',
+    padding: 10,
+    margin: 40
+  }
+
 });
 
 AppRegistry.registerComponent('bof', () => bof);
