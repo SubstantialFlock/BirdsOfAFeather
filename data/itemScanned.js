@@ -1,5 +1,6 @@
 module.exports.itemScanned = {
-  name: 'Cheerios Toasted Whole Grain Oat Cereal',
-  image: 'https://upload.wikimedia.org/wikipedia/en/6/65/Wiki_cheerios.jpg',
-  ingredients: 'Whole Grain Oats (includes the oat bran), Modified Corn Starch, Sugar, Salt, Tripotassium Phosphate, Wheat Starch, Vitamin E (mixed tocopherols) Added to Preserve Freshness.'
-}
+  name: 'Honey Nut Cheerios',
+  image: 'https://whatsyourmodotorg.files.wordpress.com/2013/01/honey-nut-cheerios.jpg',
+  badIngredients: 'Honey, Natural Almond Flavor',
+  ingredients: 'Whole Grain Oats (includes the oat bran), Modified Corn Starch, Honey, Brown Sugar Syrup, Salt, Tripotassium Phosphate, Canola and/or Rice Bran Oil, Natural Almond Flavor, Vitamin E (mixed tocopherols) Added to Preserve Freshness.'
+};

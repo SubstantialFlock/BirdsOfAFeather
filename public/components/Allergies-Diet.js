@@ -29,7 +29,7 @@ export default class AllergiesAndDiet extends Component {
           </TouchableHighlight>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
-          <TouchableHighlight style={style.styles.allergyAndDietIcon} onPress={this.props.onSelectAllergy.bind(this,'Corn')}>
+          <TouchableHighlight style={style.styles.allergyAndDietIcon} onPress={this.props.onSelectAllergy.bind(this, 'Corn')}>
             <Image style={style.styles.allergyAndDietIcon} source={require('./../../images/corn-icon.png')}></Image>
           </TouchableHighlight>
           <TouchableHighlight style={style.styles.allergyAndDietIcon} onPress={this.props.onSelectAllergy.bind(this, 'Sulfite')}>

@@ -1,4 +1,4 @@
 module.exports.allergiesAndDiet = {
-  allergies: ['nuts', 'shellfish'],
+  allergies: ['gluten', 'tree nuts'],
   diet: ['vegan']
 }
