@@ -1,7 +1,41 @@
 import React, { Component, PropTypes } from 'react';
-import { Text, TouchableHighlight, View, Image } from 'react-native';
+import { Text, TouchableHighlight, View, ListView, Image } from 'react-native';
+const _ = require('underscore');
+const Accordion = require('react-native-accordion');
+const style = require('./../style/styles');
 
 export default class Summary extends Component {
+  constructor(props) {
+    super(props);
+    console.log('Inside constructor of Summary and this.props is', this.props);
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows(_.range(1))
+    };
+  }
+
+  renderRow(productDescription) {
+    console.log('inside renderRow and the productDescription is', productDescription);
+    var header = (
+      <View style={{backgroundColor: 'grey'}}>
+        <Text style={{fontFamily: 'Didot-Italic', textAlign: 'center', color: 'white'}}>Click for all ingredients</Text>
+      </View>
+    );
+    var content = (
+      <View>
+        <Text style={{fontFamily: 'Didot-Italic'}}>{this.props.productDescription.ingredients}</Text>
+      </View>
+    );
+
+    return (
+      <Accordion
+        header={header}
+        content={content}
+        easing='easeOutCubic'
+      />
+    );
+  }
+
   render() {
     return (
       <View>
@@ -28,8 +62,14 @@ export default class Summary extends Component {
           <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'red'}}>Avoid</Text>
         </View>
         <Text style={{color: 'red', fontFamily: 'Didot', textAlign: 'center'}}>{this.props.productDescription.badIngredients}</Text>
-        <TouchableHighlight onPress={this.props.onBack}>
-          <Text>Go Back</Text>
+        <Text>{'\n'}</Text>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow.bind(this, this.props.productDescription)}
+        />
+        <Text>{'\n'}</Text>
+        <TouchableHighlight style={style.styles.back} onPress={this.props.onBack}>
+          <Text style={style.styles.text}>Go Back</Text>
         </TouchableHighlight>
       </View>
     );
