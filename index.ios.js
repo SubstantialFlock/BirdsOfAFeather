@@ -41,6 +41,9 @@ class bof extends Component {
       productIngredients: [],
       productAllergies: [],
       ingredientsToAvoid: [],
+      isVegan: true,
+      isVegetarian: true,
+      isPescatarian: true,
       user: null,
       credential: {}
     };
@@ -64,6 +67,27 @@ class bof extends Component {
     var allergiesProductContains = parsedData.allergies;
     this.state.grade = parsedData.score;
     this.state.productIngredients = parsedData.ingredientList;
+
+    if (parsedData.diet['Animal-Derived'] && this.state.diets.indexOf('Vegan') !== -1) {
+      this.state.isVegan = false;
+    }
+
+    if (this.state.diets.indexOf('Vegetarian') !== -1) {
+      allergiesProductContains['Animal-Derived'].forEach(allergies => {
+        if (allergiesProductContains['Dairy'].indexOf(allergies) === -1 && allergiesProductContains['Eggs'].indexOf(allergies) === -1) {
+          this.state.isVegetarian = false;
+        }
+      });
+    }
+
+    if (this.state.diets.indexOf('Pescatarian') !== -1) {
+      allergiesProductContains['Animal-Derived'].forEach(allergies => {
+        if (allergiesProductContains['Dairy'].indexOf(allergies) === -1 && allergiesProductContains['Eggs'].indexOf(allergies) === -1
+          && allergiesProductContains['Shellfish'].indexOf(allergies) === -1 && allergiesProductContains['Fish'].indexOf(allergies) === -1) {
+          this.state.isPescatarian = false;
+        }
+      });
+    }
 
     this.state.allergies.forEach(allergy => {
       if (allergiesProductContains[allergy]) {
@@ -103,17 +127,13 @@ class bof extends Component {
     }
   }
 
-  // takePicture() {
-  //   this.camera.capture()
-  //     .then((data) => console.log(data))
-  //     .catch(err => console.error(err));
-  // }
-
   render() {
     return (
       <NavigatePage username={this.state.username} concerns={this.state.concerns} allergies={this.state.allergies} diets={this.state.diets} 
-      selected={this.state.selected} productImage={this.state.productImage} grade={this.state.grade} productIngredients={this.state.productIngredients} 
-      productAllergies={this.state.productAllergies} ingredientsToAvoid={this.state.ingredientsToAvoid} onSelectConcern={this.onSelectConcern} onSelectAllergy={this.onSelectAllergy} 
+      selected={this.state.selected} productImage={this.state.productImage} grade={this.state.grade}
+      isVegan={this.state.isVegan} isVegetarian={this.state.isVegetarian} isPescatarian={this.state.isPescatarian}
+      productAllergies={this.state.productAllergies} ingredientsToAvoid={this.state.ingredientsToAvoid} productIngredients={this.state.productIngredients}
+      onSelectConcern={this.onSelectConcern} onSelectAllergy={this.onSelectAllergy}
       onSelectDiet={this.onSelectDiet} onFilterProductData={this.onFilterProductData} goToSummary={this.goToSummary} onForward={this.onForward} onBack={this.onBack} rootParent={this}/>
     );
   }
