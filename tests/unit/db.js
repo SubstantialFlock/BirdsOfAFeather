@@ -14,7 +14,7 @@
   
 // });
 
-if (process.env.TESTSTRING === 'afasfasfassd') {
+if (process.env.TESTSTRING === afasfasfassd) {
   var Users = require('../../server-dist/db/models/userModel').Users;
   describe('Postgres unit tests', function() {
 
