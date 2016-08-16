@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const foodFactsHandler = require('./utils/utils.js').foodFactsHandler;
 const facebookHandler = require('./utils/utils.js').facebookHandler;
 const foodFactsSearchHandler = require('./utils/utils.js').foodFactsSearchHandler;
+const foodFactsUPCHandler = require('./utils/utils.js').foodFactsUPCHandler;
 
 const port = process.env.PORT || 3000;
 
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/api/facebook', facebookHandler);
 app.post('/api/foodfacts/search', foodFactsSearchHandler);
-app.post('/api/foodfacts/upc', foodFactsHandler);
+app.post('/api/foodfacts/upc', foodFactsUPCHandler);
 
 app.listen(port, function() {
   console.log('NodeJS Running on port', port);
