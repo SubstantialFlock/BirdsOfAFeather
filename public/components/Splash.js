@@ -62,6 +62,7 @@ export default class Splash extends Component {
     let multi_get_keys = ['USERID','USERNAME', 'EMAIL', 'FRIENDS'];
     try {
       await AsyncStorage.multiGet(multi_get_keys, (err, stores) => {
+        console.log('here in retrieveUserData -----  ', stores);
         this.props.rootParent.setState({
           userId: stores[0][1],
           username: stores[1][1],
@@ -106,12 +107,27 @@ export default class Splash extends Component {
             pages: ['Splash', 'Welcome', 'Allergies/Diet', 'Scan', 'UPCReader', 'Summary'],
             productDescription: {}
           });
+          AsyncStorage.clear((err) => {
+            if (err) {
+              console.log('Error clearing user data: ', err);
+            } else {
+              console.log('User data cleared');
+            }
+          });
         }}
         onLoginFound={function(data){
           console.log("Existing login found.");
           console.log(data);
           _this.retrieveUserData(data.credentials.userId);
-          _this.props.onForward();
+          // _this.props.onForward();
+          AsyncStorage.clear((err) => {
+            if (err) {
+              console.log('Error clearing user data: ', err);
+            } else {
+              console.log('User data cleared');
+            }
+          });
+          // _this.props.onForward();
         }}
         onLoginNotFound={function(){
           console.log("No user logged in.");

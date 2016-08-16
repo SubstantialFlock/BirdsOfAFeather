@@ -27,7 +27,7 @@ export default class UPCReader extends Component {
   }
 
   readBarCode(event, test) {
-    console.log('inside readBarCode');
+    console.log('inside readBarCode 30', event);
     fetch('https://murmuring-dusk-10598.herokuapp.com/api/foodfacts/upc', 
       {
         method: 'POST',
