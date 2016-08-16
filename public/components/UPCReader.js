@@ -3,10 +3,14 @@ import {
   AppRegistry,
   Dimensions,
   StyleSheet,
+  Text,
+  TouchableHighLight,
   View
 } from 'react-native';
 import Camera from 'react-native-camera';
 import _ from 'lodash';
+const style = require('./../style/styles');
+
 
 export default class UPCReader extends Component {
   render() {
@@ -20,7 +24,10 @@ export default class UPCReader extends Component {
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
           onBarCodeRead= { _.throttle(this.readBarCode.bind(this), 5000, { 'trailing': false } ) }>
+
+          <Text>UPC Captured</Text>
         </Camera>
+
 
       </View>
     );
@@ -28,6 +35,7 @@ export default class UPCReader extends Component {
 
   readBarCode(event, test) {
     console.log('inside readBarCode 30', event);
+
     fetch('https://murmuring-dusk-10598.herokuapp.com/api/foodfacts/upc', 
       {
         method: 'POST',

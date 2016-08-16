@@ -4,6 +4,7 @@ const _ = require('lodash');
 import {setNewUser} from '../db/controllers/userSet';
 
 const foodFactsSearchHandler = function(req, res) {
+  console.log('==========================req,body=====================', req.body);
   const searchString = req.body.searchTerm.replace(/\s/g, '&'); 
   console.log(searchString);
 
@@ -114,4 +115,3 @@ const facebookHandler = (req, res) => {
 exports.facebookHandler = facebookHandler;
 exports.foodFactsSearchHandler = foodFactsSearchHandler;
 exports.foodFactsUPCHandler = foodFactsUPCHandler;
-

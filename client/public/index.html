@@ -8,6 +8,7 @@
 <h1>Birds of a Feather Test 2</h1>
   <button onclick="getSampleData()">Get Sample Data</button>
   <button onclick="sendFacebookData()">Send facebook Data</button>
+  <button  onclick="searchFoodFacts()">Search Food Facts</button> 
   <script>
     var getSampleData = function() {
       console.log('button clicked');
@@ -16,7 +17,8 @@
         url: '/api/foodfacts/upc',
         data: {
           event: {
-            data: '0014100085461'
+            data: '02570'
+            // data: '0014100085461'
           }
         },
         // dataType: 'application/json'
@@ -45,6 +47,19 @@
             data: fbSampleData
           }
         },
+        // dataType: 'application/json'
+        success: function(response) {
+          console.log(response);
+        }
+      });
+    };
+
+    var searchFoodFacts = function() {
+      console.log('inside search product function');
+      $.ajax({
+        type: 'POST',
+        url: '/api/foodfacts/search',
+        data: {searchTerm: 'burger king cookie'},
         // dataType: 'application/json'
         success: function(response) {
           console.log(response);
