@@ -4,7 +4,7 @@ const _ = require('lodash');
 import {setNewUser} from '../db/controllers/userSet';
 
 const foodFactsSearchHandler = function(req, res) {
-  const searchString = req.body.searchTerm.replace(' ', '&'); 
+  const searchString = req.body.searchTerm.replace(/\s/g, '&'); 
   console.log(searchString);
 
   request.post(
