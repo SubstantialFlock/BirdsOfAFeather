@@ -30,14 +30,8 @@ export default class UPCReader extends Component {
     );
   }
 
-<<<<<<< f0a74e704003fadd057188f4e51083c2ade397a0
   readBarCode(event) {
     Vibration.vibrate();
-=======
-  readBarCode(event, test) {
-    console.log('inside readBarCode 30', event);
-
->>>>>>> Add button to test text search
     fetch('https://murmuring-dusk-10598.herokuapp.com/api/foodfacts/upc', 
       {
         method: 'POST',
