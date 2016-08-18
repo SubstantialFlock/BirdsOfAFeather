@@ -3,7 +3,36 @@ require('dotenv').config();
 const _ = require('lodash');
 import {setNewUser} from '../db/controllers/userSet';
 
-const foodFactsHandler = (req, res) => {
+const foodFactsSearchHandler = function(req, res) {
+  console.log('==========================req,body=====================', req.body);
+  const searchString = req.body.searchTerm.replace(/\s/g, '&'); 
+  console.log(searchString);
+
+  request.post(
+    'https://api.foodfacts.com/ci/api/foodfacts/food_products_per_search_term/format/json',
+    {
+      form: {
+        login: process.env.FOOD_FACTS_LOGIN,
+        password: process.env.FOOD_FACTS_PASSWORD,
+        search_term: searchString,
+        per_page: 10,
+        page: 1,
+        sort_by: '_score:desc'
+      }
+    },
+    function (error, response, body) {
+      if (!error) {
+        var result = JSON.parse(body);
+        console.log(result.results.products);
+        res.send(result.results.products);
+      } else {
+        console.log('Food Facts API error', error);
+      }
+    }
+  );
+};
+
+const foodFactsUPCHandler = (req, res) => {
   console.log('inside foodfacts api');
   const upc = req.body.event.data.slice(1);
   console.log(upc);
@@ -83,5 +112,6 @@ const facebookHandler = (req, res) => {
   setNewUser(req.body, res);
 };
 
-exports.foodFactsHandler = foodFactsHandler;
 exports.facebookHandler = facebookHandler;
+exports.foodFactsSearchHandler = foodFactsSearchHandler;
+exports.foodFactsUPCHandler = foodFactsUPCHandler;

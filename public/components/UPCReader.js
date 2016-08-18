@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 import _ from 'lodash';
+const style = require('./../style/styles');
+
 
 export default class UPCReader extends Component {
   render() {
@@ -22,6 +24,7 @@ export default class UPCReader extends Component {
           aspect={Camera.constants.Aspect.fill}
           onBarCodeRead= { _.throttle(this.readBarCode.bind(this), 8000, { 'trailing': false } ) }>
         </Camera>
+
 
       </View>
     );
