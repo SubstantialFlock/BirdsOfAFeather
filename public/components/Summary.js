@@ -109,7 +109,7 @@ export default class Summary extends Component {
     this.props.rootParent.setState({ comments });
     newComment.upc = this.props.rootParent.state.upc;
     newComment.rating = this.props.rootParent.state.myRating;
-    fetch('http://10.6.24.31:3000/api/product/addComm',
+    fetch('http://10.6.24.1:3000/api/product/addComm',
       {
         method: 'POST',
         headers:
