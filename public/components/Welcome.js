@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
-import { Text, TouchableHighlight, View } from 'react-native';
+import { Text, TouchableHighlight, View, Image } from 'react-native';
 const style = require('./../style/styles');
 
 export default class Welcome extends Component {
   render() {
     return (
-      <View>
-        <Text>{"\n"}</Text>
-        <Text style={style.styles.welcome}>Welcome {this.props.username}</Text>
-        <Text style={style.styles.concernQuestion}>What are your concerns?</Text>
-        <View style={{flex: 2, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-          <TouchableHighlight style={style.styles.health} onPress={this.props.onSelectConcern.bind(this, 'Health')}>
-            <Text style={style.styles.text}>Health</Text>
-          </TouchableHighlight>
-          <TouchableHighlight style={style.styles.environment} onPress={this.props.onSelectConcern.bind(this, 'Environment')}>
-            <Text style={style.styles.text}>Environment</Text>
-          </TouchableHighlight>
-          <TouchableHighlight style={style.styles.society} onPress={this.props.onSelectConcern.bind(this, 'Society')}>
-            <Text style={style.styles.text}>Society</Text>
+      <Image style={style.styles.splashBackground} source={require('image!foodaware-splash')}>
+        <View style={{backgroundColor: 'rgba(192,192,192,0.3)', flex: 1, alignSelf: 'stretch'}}>
+        <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text>
+        <Text style={style.styles.welcome}>Welcome to FoodAware</Text>
+        <Text>{'\n'}</Text>
+        <Text style={style.styles.welcome}>{this.props.username}</Text>
+        <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text>
+        <Text style={{color: 'white', fontSize: 40, textAlign: 'center', fontFamily: 'Didot-Italic'}}>Please press start to continue</Text>
+        <View style={{alignItems: 'center'}}>
+          <Text>{'\n'}</Text>
+          <TouchableHighlight style={{borderColor: 'white', borderWidth: 1}} onPress={this.props.onForward}>
+            <Text style={style.styles.start}>Start</Text>
           </TouchableHighlight>
         </View>
-        <View style={style.styles.container}>
-        <TouchableHighlight style={style.styles.next} onPress={this.props.onForward}>
-          <Text style={style.styles.text}>Finish selecting concerns</Text>
-        </TouchableHighlight>
-        <TouchableHighlight style={style.styles.back} onPress={this.props.onBack}>
-          <Text style={style.styles.text}>Go Back</Text>
-        </TouchableHighlight>
-        <TouchableHighlight style={style.styles.next} onPress={this.props.goToProfile}>
-          <Text style={style.styles.text}>Go To Profile</Text>
-        </TouchableHighlight>
         </View>
-      </View>
+      </Image>
     );
   }
 }

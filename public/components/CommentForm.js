@@ -29,15 +29,15 @@ export default class CommentForm extends Component {
 
   render() {
     let _this = this;
-  	return (
-  		<View>
+    return (
+      <View>
         <StarRating 
           disabled={false}
           maxStars={5}
           rating={this.props.rootParent.state.myRating}
           selectedStar={(rating) => _this.onStarRatingPress(rating)}
         />
-  			<Form
+      <Form
           ref="form"
           type={Comment}
           options={options}
