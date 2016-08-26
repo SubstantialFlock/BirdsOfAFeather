@@ -177,7 +177,7 @@ export default class Summary extends Component {
       <View>
         <View style={{marginTop: 20, marginLeft: 350}}>
           <TouchableHighlight onPress={this.props.goToAllergiesAndDiet}>
-            <Image style={{height: 50, width: 50}} source={{uri: 'http://cornerstonecoastal.com/wp-content/plugins/bright/images/menu-icon.png'}}></Image>
+            <Image style={{height: 50, width: 50}} source={require('image!menu')}></Image>
           </TouchableHighlight>
         </View>
         <View>
