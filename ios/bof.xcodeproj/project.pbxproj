@@ -22,11 +22,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		35A236701D70159100A87F5F /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 35A2366F1D70159100A87F5F /* main.jsbundle */; };
 		35C4A97B1D5AE31400B190C1 /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C4A9711D5AE2E100B190C1 /* libRCTFBLogin.a */; };
 		35C4A97F1D5AE35200B190C1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C4A97C1D5AE35200B190C1 /* FBSDKCoreKit.framework */; };
 		35C4A9801D5AE35200B190C1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C4A97D1D5AE35200B190C1 /* FBSDKLoginKit.framework */; };
 		35C4A9811D5AE35200B190C1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C4A97E1D5AE35200B190C1 /* FBSDKShareKit.framework */; };
-		35C556C71D6F9F5000176E6F /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 35C556C61D6F9F5000176E6F /* main.jsbundle */; };
 		35E9FC491D6D47A8004C4E2E /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35E9FC411D6D47A8004C4E2E /* Entypo.ttf */; };
 		35E9FC4A1D6D47A8004C4E2E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35E9FC421D6D47A8004C4E2E /* EvilIcons.ttf */; };
 		35E9FC4B1D6D47A8004C4E2E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35E9FC431D6D47A8004C4E2E /* FontAwesome.ttf */; };
@@ -154,11 +154,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = bof/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = bof/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		35A2366F1D70159100A87F5F /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = bof/main.jsbundle; sourceTree = "<group>"; };
 		35C4A96B1D5AE2E000B190C1 /* RCTFBLogin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBLogin.xcodeproj; path = "../node_modules/react-native-facebook-login/RCTFBLogin.xcodeproj"; sourceTree = "<group>"; };
 		35C4A97C1D5AE35200B190C1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../node_modules/react-native-facebook-login/FacebookSDK/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		35C4A97D1D5AE35200B190C1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../node_modules/react-native-facebook-login/FacebookSDK/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		35C4A97E1D5AE35200B190C1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../node_modules/react-native-facebook-login/FacebookSDK/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		35C556C61D6F9F5000176E6F /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = bof/main.jsbundle; sourceTree = "<group>"; };
 		35E9FC411D6D47A8004C4E2E /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
 		35E9FC421D6D47A8004C4E2E /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		35E9FC431D6D47A8004C4E2E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -373,7 +373,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				35C556C61D6F9F5000176E6F /* main.jsbundle */,
+				35A2366F1D70159100A87F5F /* main.jsbundle */,
 				35E9FC401D6D47A8004C4E2E /* Fonts */,
 				35C4A97C1D5AE35200B190C1 /* FBSDKCoreKit.framework */,
 				35C4A97D1D5AE35200B190C1 /* FBSDKLoginKit.framework */,
@@ -450,7 +450,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = VBLZZ294T3;
+						DevelopmentTeam = P6A5K67373;
 					};
 				};
 			};
@@ -625,13 +625,13 @@
 				35E9FC4F1D6D47A8004C4E2E /* Octicons.ttf in Resources */,
 				8DA1904E1D63DE430090D7EE /* main.jsbundle in Resources */,
 				35E9FC4C1D6D47A8004C4E2E /* Foundation.ttf in Resources */,
+				35A236701D70159100A87F5F /* main.jsbundle in Resources */,
 				35E9FC4D1D6D47A8004C4E2E /* Ionicons.ttf in Resources */,
 				35E9FC491D6D47A8004C4E2E /* Entypo.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				35E9FC501D6D47A8004C4E2E /* Zocial.ttf in Resources */,
 				35E9FC4E1D6D47A8004C4E2E /* MaterialIcons.ttf in Resources */,
 				35E9FC4A1D6D47A8004C4E2E /* EvilIcons.ttf in Resources */,
-				35C556C71D6F9F5000176E6F /* main.jsbundle in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				35E9FC4B1D6D47A8004C4E2E /* FontAwesome.ttf in Resources */,
 			);
@@ -763,10 +763,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.test3.bof;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.test4.bof;
 				PRODUCT_NAME = bof;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -791,10 +791,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.test3.bof;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.test4.bof;
 				PRODUCT_NAME = bof;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
