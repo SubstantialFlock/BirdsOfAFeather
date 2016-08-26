@@ -70,7 +70,7 @@ export default class CurrentScene extends Component {
     if (this.props.page === 'Summary') {
       return (
         <Summary concerns={this.props.concerns} allergies={this.props.allergies} diets={this.props.diets} productImage={this.props.productImage} grade={this.props.grade}
-        averageGrade={this.props.averageGrade} isVegan={this.props.isVegan} isVegetarian={this.props.isVegetarian} isPescatarian={this.props.isPescatarian}
+        averageRating={this.props.averageRating} isVegan={this.props.isVegan} isVegetarian={this.props.isVegetarian} isPescatarian={this.props.isPescatarian}
         productIngredients={this.props.productIngredients} productAllergies={this.props.productAllergies} ingredientsToAvoid={this.props.ingredientsToAvoid}
         favorited={this.props.favorited} favoriteProduct={this.props.favoriteProduct} goToProfile={this.props.goToProfile} onBack={this.props.onBack} rootParent={this.props.rootParent} />
       );

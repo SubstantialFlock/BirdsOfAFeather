@@ -31,7 +31,7 @@ export default class NavigatePage extends Component {
             diets={this.props.diets}
             productImage={this.props.productImage}
             grade={this.props.grade}
-            averageGrade={this.props.averageGrade}
+            averageRating={this.props.averageRating}
             shellfish={this.props.shellfish}
             peanuts={this.props.peanuts}
             animalDerived={this.props.animalDerived}

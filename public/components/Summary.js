@@ -104,7 +104,7 @@ export default class Summary extends Component {
       comment: value.Comment,
       time: new Date()
     };
-    let comments = this.props.rootParent.state.comments
+    let comments = this.props.rootParent.state.comments;
     comments.push(newComment);
     this.props.rootParent.setState({ comments });
     newComment.upc = this.props.rootParent.state.upc;
@@ -204,7 +204,7 @@ export default class Summary extends Component {
         <View style={{backgroundColor: '#ffb84d', height: 160, width: 160, borderRadius: 160 / 2, marginTop: 30, marginLeft: 230}}>
           <View style={{width: 100, marginLeft: 30}}>
             <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', marginTop: 40, color: 'white'}}>Grade:</Text>
-            <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white'}}>{this.props.averageGrade}</Text>
+            <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white'}}>{this.props.averageRating}</Text>
           </View>
         </View>
         <View style={style.styles.container}>
