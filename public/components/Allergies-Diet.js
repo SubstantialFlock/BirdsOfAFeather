@@ -103,13 +103,13 @@ export default class AllergiesAndDiet extends Component {
             {wheatIcon}
           </TouchableHighlight>
         </View>
-        <View style={{flex: 0.6, flexDirection: 'row'}}>
-          <Text style={{margin: 6}}>Shellfish</Text>
-          <Text style={{marginTop: 6, marginRight: 14, marginBottom: 6, marginLeft: 6}}>Peanuts</Text>
-          <Text style={{marginTop: 6, marginRight: 15, marginBottom: 6, marginLeft: 6}}>Animal{'\n'}Derived</Text>
-          <Text style={{marginTop: 6, marginRight: 25, marginBottom: 6, marginLeft: 6}}>Soy</Text>
-          <Text style={{marginTop: 6, marginRight: 24, marginBottom: 6, marginLeft: 6}}>Dairy</Text>
-          <Text style={{margin: 6}}>Wheat</Text>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Shellfish</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Peanuts</Text>
+          <Text style={{marginTop: 15, marginRight: 15, marginBottom: 6, marginLeft: 6}}>Animal{'\n'}Derived</Text>
+          <Text style={{marginTop: 15, marginRight: 25, marginBottom: 6, marginLeft: 6}}>Soy</Text>
+          <Text style={{marginTop: 15, marginRight: 24, marginBottom: 6, marginLeft: 6}}>Dairy</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Wheat</Text>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <TouchableHighlight style={style.styles.allergyAndDietIcon} onPress={this.props.onSelectAllergy.bind(this, 'Corn')}>
@@ -131,13 +131,13 @@ export default class AllergiesAndDiet extends Component {
             {fishIcon}
           </TouchableHighlight>
         </View>
-        <View style={{flex: 0.4, flexDirection: 'row'}}>
-          <Text style={{marginTop: 6, marginRight: 22, marginBottom: 6, marginLeft: 14}}>Corn</Text>
-          <Text style={{margin: 6}}>Sulfite</Text>
-          <Text style={{marginTop: 6, marginRight: 4, marginBottom: 6, marginLeft: 6}}>Tree Nuts</Text>
-          <Text style={{margin: 6}}>Nightshades</Text>
-          <Text style={{marginTop: 6, marginRight: 15, marginBottom: 6, marginLeft: 6}}>Egg</Text>
-          <Text style={{margin: 6}}>Fish</Text>
+        <View style={{flex: 0.8, flexDirection: 'row'}}>
+          <Text style={{marginTop: 15, marginRight: 22, marginBottom: 6, marginLeft: 14}}>Corn</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Sulfite</Text>
+          <Text style={{marginTop: 15, marginRight: 4, marginBottom: 6, marginLeft: 6}}>Tree Nuts</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Nightshades</Text>
+          <Text style={{marginTop: 15, marginRight: 15, marginBottom: 6, marginLeft: 6}}>Egg</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Fish</Text>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <TouchableHighlight style={style.styles.allergyAndDietIcon} onPress={this.props.onSelectAllergy.bind(this, 'Trans fat')}>
@@ -150,11 +150,12 @@ export default class AllergiesAndDiet extends Component {
             {flavoringIcon}
           </TouchableHighlight>
         </View>
-        <View style={{flex: 0.4, flexDirection: 'row'}}>
-          <Text style={{margin: 6}}>Trans fat</Text>
-          <Text style={{margin: 6}}>Gluten</Text>
-          <Text style={{margin: 6}}>Flavoring</Text>
+        <View style={{flex: 0.8, flexDirection: 'row'}}>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Trans fat</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Gluten</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Flavoring</Text>
         </View>
+        <Text>{'\n'}</Text>
         <Text style={{textAlign: 'center', fontFamily: 'Didot-Italic', fontSize: 35}}>Any Dietary Concerns?</Text>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <TouchableHighlight style={style.styles.allergyAndDietIcon} onPress={this.props.onSelectDiet.bind(this, 'Vegan')}>
@@ -167,6 +168,13 @@ export default class AllergiesAndDiet extends Component {
             {pescatarianIcon}
           </TouchableHighlight>
         </View>
+        <View style={{flex: 0.8, flexDirection: 'row'}}>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Vegan</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Vegetarian</Text>
+          <Text style={{marginTop: 15, marginRight: 6, marginBottom: 6, marginLeft: 6}}>Pescatarian</Text>
+        </View>
+        <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text>
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
           <TouchableHighlight style={style.styles.back} onPress={this.props.onBack}>
             <Text style={style.styles.navigationText}>Back</Text>
