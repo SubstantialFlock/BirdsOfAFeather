@@ -72,7 +72,7 @@ class bof extends Component {
       favoritedProducts: {},
       productImage: 'http://cdn.shopify.com/s/files/1/0984/6418/t/7/assets/noimage.jpg?17276477175536323609',
       grade: 'N/A',
-      averageGrade: 'N/A',
+      averageRating: 'N/A',
       productIngredients: [],
       productAllergies: [],
       ingredientsToAvoid: [],
@@ -80,18 +80,8 @@ class bof extends Component {
       isVegetarian: true,
       isPescatarian: true,
       searchResult: [],
-      avgRating: 3.5,
       myRating: 0,
-      comments: [{ userid: 123, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 234, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 345, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 123, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 456, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 789, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 890, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 134, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 246, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'},
-                  { userid: 357, username: 'Hong', text: 'comment comment comment comment comment comment comment comment comment comment comment ', time: 'time'}]
+      comments: []
     };
   }
 
@@ -302,7 +292,7 @@ class bof extends Component {
 
   onFilterProductData(navigator, data) {
     var parsedData = JSON.parse(data._bodyInit);
-    // console.log('================================ parsedData =================================', parsedData);
+    console.log('================================ parsedData =================================', parsedData);
     if (!parsedData.validUPC) {
       Alert.alert(
             'Alert Title',
@@ -319,6 +309,7 @@ class bof extends Component {
     } else {
       var allergiesProductContains = parsedData.allergies;
       this.state.grade = parsedData.score;
+      this.state.averageRating = parsedData.averageRate;
       this.state.title = parsedData.title;
       this.state.productIngredients = parsedData.ingredientList;
       this.state.isVegan = true;
@@ -546,7 +537,7 @@ class bof extends Component {
       <NavigatePage username={this.state.username} picture={this.state.picture} following={this.state.following} favoriteProduct={this.favoriteProduct}
       favorited={this.state.favorited} favoritedProducts={this.state.favoritedProducts} renderActivity={this.renderActivity} renderFavoriteProducts={this.renderFavoriteProducts} renderFollowing={this.renderFollowing}
       profilePage={this.state.profilePage} concerns={this.state.concerns} allergies={this.state.allergies} diets={this.state.diets}
-      goToProfile={this.goToProfile} goToAllergiesAndDiet={this.goToAllergiesAndDiet} productImage={this.state.productImage} grade={this.state.grade} averageGrade={this.state.averageGrade}
+      goToProfile={this.goToProfile} goToAllergiesAndDiet={this.goToAllergiesAndDiet} productImage={this.state.productImage} grade={this.state.grade} averageRating={this.state.averageRating}
       shellfish={this.state.Shellfish} peanuts={this.state.Peanuts} animalDerived={this.state.AnimalDerived} soy={this.state.Soy}
       dairy={this.state.Dairy} wheat={this.state.Wheat} corn={this.state.Corn} sulfite={this.state.Sulfite} treeNuts={this.state.TreeNuts}
       nightshades={this.state.Nightshades} egg={this.state.Egg} fish={this.state.Fish} transfat={this.state.Transfat} gluten={this.state.Gluten} flavoring={this.state.Flavoring}

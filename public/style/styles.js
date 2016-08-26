@@ -13,6 +13,24 @@ module.exports.styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 30
   },
+  splashBackground: {
+    flex: 1,
+    width: null,
+    height: null,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.9)'
+  },
+  start: {
+    color: 'white',
+    fontFamily: 'Didot-Italic',
+    textAlign: 'center',
+    fontSize: 40,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingRight: 60,
+    paddingLeft: 60
+  },
   next: {
     flex: 4,
     flexDirection: 'row',
@@ -51,7 +69,8 @@ module.exports.styles = StyleSheet.create({
   welcome: {
     textAlign: 'center',
     fontFamily: 'Didot-Italic',
-    fontSize: 50
+    fontSize: 80,
+    color: 'white'
   },
   health: {
     backgroundColor: '#ff6666',
