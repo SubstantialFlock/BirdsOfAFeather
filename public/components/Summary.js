@@ -180,32 +180,25 @@ export default class Summary extends Component {
             <Image style={{height: 50, width: 50}} source={require('image!menu')}></Image>
           </TouchableHighlight>
         </View>
-        <View>
-          <TouchableHighlight style={{height: 30, width: 43, marginLeft: 30, marginBottom: 20}} onPress={this.props.favoriteProduct}>
-            <Image source={{uri: favoriteProductIcon}} style={{height: 39, width: 43, marginBottom: 10}}></Image>
-          </TouchableHighlight>
-        </View>
-        <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
           <Image source={{uri: this.props.productImage }} style={{height: 150, width: 150}}></Image>
-          <View style={{backgroundColor: '#00e6b8', height: 160, width: 160, borderRadius: 160 / 2, marginTop: 30, marginLeft: 80}}>
+          <View style={{backgroundColor: '#00e6b8', height: 160, width: 160, borderRadius: 160 / 2, marginLeft: 80}}>
             <View style={{width: 100, marginLeft: 30}}>
               <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white', marginTop: 40}}>Grade:</Text>
               <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white'}}>{this.props.grade}</Text>
             </View>
           </View>
         </View>
-
+        <View>
         <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 8}}>Allergies</Text>
         <Text style={{color: 'red', fontFamily: 'Didot-Italic', marginLeft: 8}}>{productAllergies}</Text>
         <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 8}}>Dietary Concerns</Text>
+        </View>
         <View style={{flex: 0.5, flexDirection: 'row'}}>
           {dietIcon}
         </View>
-        <View style={{flex: 0.5, flexDirection: 'row'}}>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'green'}}>Healthy</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: '#ffd633'}}>Unhealthy</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'purple'}}>Controversial</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'red'}}>Avoid</Text>
+        <View style={{flex: 0.5, flexDirection: 'row', justifyContent: 'center'}}>
+          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'green'}}>Ingredients to Avoid</Text>
         </View>
         <Text style={{color: 'red', fontFamily: 'Didot', textAlign: 'center'}}>{ingredientsToAvoid}</Text>
         <ListView
@@ -213,7 +206,7 @@ export default class Summary extends Component {
           renderRow={this.renderRow.bind(this, allIngredients)}
           enableEmptySections={true}
         />
-        <View style={{width: 400, marginLeft: 30, alignItems: 'center'}}>
+        <View style={{width: 400, marginLeft: 30, marginBottom: 30, alignItems: 'center'}}>
           <Text style={{textAlign: 'center', fontSize: 20, fontFamily: 'Didot-Italic', marginTop: 40, color: '#995c00'}}>Average Rating:</Text>
           <View style={{flexDirection:'row', flexWrap:'wrap'}}>
             <View style={{width: 100}}></View>
@@ -229,7 +222,7 @@ export default class Summary extends Component {
             <View style={{width: 130}}></View>
           </View>
         </View>
-        <View style={{flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',}}>
+        <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center',}}>
           <TouchableHighlight style={{
                                   height: 30,
                                   width: 175,
@@ -268,7 +261,7 @@ export default class Summary extends Component {
     return (
       <View>
         <View style={{height: 20}}></View>
-        <ListView style={{height: Viewport.height}}
+        <ListView 
           dataSource={this.state.commentsDataSource}
           renderRow={this._renderComment.bind(this)}
           renderHeader={this._renderHeader.bind(this)}
