@@ -88,7 +88,7 @@ export default class Summary extends Component {
       return;
     }
     return (
-      <View>
+      <View style={{marginLeft: 10}}>
         <View style={{flexDirection:'row', flexWrap:'wrap'}}>
           <Text>{`${comment.userName}:  `}</Text>
           {this._isFollowing(comment.userId, comment.userName)}
@@ -193,21 +193,21 @@ export default class Summary extends Component {
               </TouchableHighlight>
             </View>
           </View>
-
+          <Text>{'\n'}</Text>
           <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 10}}>Allergies</Text>
           <Text style={{color: 'red', fontFamily: 'Didot-Italic', marginLeft: 10}}>{productAllergies}</Text>
+          <Text>{'\n'}</Text>
           <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 10}}>Dietary Concerns</Text>
         </View>
         <View style={{flex: 0.5, flexDirection: 'row'}}>
           {dietIcon}
         </View>
+        <Text>{'\n'}</Text>
         <View style={{flex: 0.5, flexDirection: 'row'}}>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'green'}}>Healthy</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: '#ffd633'}}>Unhealthy</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'purple'}}>Controversial</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'red'}}>Avoid</Text>
+          <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 10}}>Ingredients To Avoid</Text>
         </View>
         <Text style={{color: 'red', fontFamily: 'Didot', textAlign: 'center'}}>{ingredientsToAvoid}</Text>
+        <Text>{'\n'}</Text>
         <ListView
           dataSource={this.state.ingrediantsDataSource}
           renderRow={this.renderRow.bind(this, allIngredients)}
@@ -230,22 +230,6 @@ export default class Summary extends Component {
           </View>
         </View>
         <Text>    </Text>
-        <View style={{flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',}}>
-          <TouchableHighlight style={{
-                                  height: 30,
-                                  width: 175,
-                                  backgroundColor: '#ffcc80',
-                                  borderColor: '#ff9900',
-                                  borderWidth: 0,
-                                  borderRadius: 8,
-                                  marginBottom: 10,
-                                  alignSelf: 'center',
-                                  justifyContent: 'center'
-                                }} 
-                              onPress={this.props.onBack}>
-            <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', alignSelf: 'center'}}>Back</Text>
-          </TouchableHighlight>
-        </View>
         <CommentForm addComment={this._addComment.bind(this)} rootParent={this.props.rootParent} />
       </View>
     );
