@@ -529,7 +529,6 @@ class bof extends Component {
     if (route.index === 5) {
       //go back to the scan page
       navigator.pop();
-      navigator.pop();
     } else if (route.index > 0) {
       navigator.pop();
     }
