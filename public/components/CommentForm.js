@@ -47,6 +47,7 @@ export default class CommentForm extends Component {
           />
           <View style={{width: 130}}></View>
         </View>
+        <Text>{'\n'}</Text>
         <View style={{
                   width: 280,
                   borderWidth: 0,

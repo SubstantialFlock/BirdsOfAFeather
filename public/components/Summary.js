@@ -88,7 +88,7 @@ export default class Summary extends Component {
       return;
     }
     return (
-      <View>
+      <View style={{marginLeft: 10}}>
         <View style={{flexDirection:'row', flexWrap:'wrap'}}>
           <Text>{`${comment.userName}:  `}</Text>
           {this._isFollowing(comment.userId, comment.userName)}
@@ -175,39 +175,39 @@ export default class Summary extends Component {
     }
     return (
       <View>
-        <View style={{marginTop: 20, marginLeft: 350}}>
+        <View style={{marginTop: 10, marginRight: 10, flexDirection: 'row', justifyContent: 'flex-end'}}>
           <TouchableHighlight onPress={this.props.goToAllergiesAndDiet}>
             <Image style={{height: 50, width: 50}} source={require('image!menu')}></Image>
           </TouchableHighlight>
         </View>
-        <View>
-          <TouchableHighlight style={{height: 30, width: 43, marginLeft: 30, marginBottom: 20}} onPress={this.props.favoriteProduct}>
-            <Image source={{uri: favoriteProductIcon}} style={{height: 39, width: 43, marginBottom: 10}}></Image>
-          </TouchableHighlight>
-        </View>
-        <View style={{flex: 1, flexDirection: 'row'}}>
-          <Image source={{uri: this.props.productImage }} style={{height: 150, width: 150}}></Image>
-          <View style={{backgroundColor: '#00e6b8', height: 160, width: 160, borderRadius: 160 / 2, marginTop: 30, marginLeft: 80}}>
-            <View style={{width: 100, marginLeft: 30}}>
-              <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white', marginTop: 40}}>Grade:</Text>
-              <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white'}}>{this.props.grade}</Text>
+        <View style={{flexDirection: 'column', marginLeft: 10}}>
+          <View style={{flexDirection: 'row'}}>
+            <Image source={{uri: this.props.productImage }} style={{height: 150, width: 150}}></Image>
+            <View style={{backgroundColor: '#00e6b8', height: 160, width: 160, borderRadius: 160 / 2, marginLeft: 50}}>
+              <View style={{width: 100, marginLeft: 30}}>
+                <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white', marginTop: 40}}>Grade:</Text>
+                <Text style={{textAlign: 'center', fontSize: 30, fontFamily: 'Didot-Italic', color: 'white'}}>{this.props.grade}</Text>
+              </View>
+              <TouchableHighlight style={{height: 30, width: 43, marginLeft: 120, marginBottom: 20}} onPress={this.props.favoriteProduct}>
+                <Image source={{uri: favoriteProductIcon}} style={{height: 39, width: 43}}></Image>
+              </TouchableHighlight>
             </View>
           </View>
+          <Text>{'\n'}</Text>
+          <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 10}}>Allergies</Text>
+          <Text style={{color: 'red', fontFamily: 'Didot-Italic', marginLeft: 10}}>{productAllergies}</Text>
+          <Text>{'\n'}</Text>
+          <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 10}}>Dietary Concerns</Text>
         </View>
-
-        <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 8}}>Allergies</Text>
-        <Text style={{color: 'red', fontFamily: 'Didot-Italic', marginLeft: 8}}>{productAllergies}</Text>
-        <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 8}}>Dietary Concerns</Text>
         <View style={{flex: 0.5, flexDirection: 'row'}}>
           {dietIcon}
         </View>
+        <Text>{'\n'}</Text>
         <View style={{flex: 0.5, flexDirection: 'row'}}>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'green'}}>Healthy</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: '#ffd633'}}>Unhealthy</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'purple'}}>Controversial</Text>
-          <Text style={{marginLeft: 10, fontFamily: 'Didot', fontSize: 18, color: 'red'}}>Avoid</Text>
+          <Text style={{fontSize: 20, fontFamily: 'Didot-Italic', marginLeft: 10}}>Ingredients To Avoid</Text>
         </View>
         <Text style={{color: 'red', fontFamily: 'Didot', textAlign: 'center'}}>{ingredientsToAvoid}</Text>
+        <Text>{'\n'}</Text>
         <ListView
           dataSource={this.state.ingrediantsDataSource}
           renderRow={this.renderRow.bind(this, allIngredients)}
@@ -229,22 +229,7 @@ export default class Summary extends Component {
             <View style={{width: 130}}></View>
           </View>
         </View>
-        <View style={{flex: 0.5, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',}}>
-          <TouchableHighlight style={{
-                                  height: 30,
-                                  width: 175,
-                                  backgroundColor: '#ffcc80',
-                                  borderColor: '#ff9900',
-                                  borderWidth: 0,
-                                  borderRadius: 8,
-                                  marginBottom: 10,
-                                  alignSelf: 'center',
-                                  justifyContent: 'center'
-                                }} 
-                              onPress={this.props.onBack}>
-            <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', alignSelf: 'center'}}>Back</Text>
-          </TouchableHighlight>
-        </View>
+        <Text>    </Text>
         <CommentForm addComment={this._addComment.bind(this)} rootParent={this.props.rootParent} />
       </View>
     );
